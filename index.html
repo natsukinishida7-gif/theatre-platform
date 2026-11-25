@@ -1,0 +1,414 @@
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>みるる｜観たい！を諦めない！唯一の広場</title>
+
+  <style>
+    :root {
+      --pink: #EBA1A5;
+      --orange: #F28B59;
+      --yellow: #F6D66D;
+      --cream: #FFF9EC;
+      --brown: #51443B;
+      --white: #FFFFFF;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Yu Gothic", "Meiryo", sans-serif;
+      color: var(--brown);
+      background: var(--cream);
+    }
+
+    /* ヘッダー */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 22px 8%;
+      background: var(--cream);
+    }
+
+    .logo {
+      font-size: 32px;
+      font-weight: 900;
+      color: var(--orange);
+      letter-spacing: 2px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--brown);
+      margin-left: 25px;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      color: var(--orange);
+    }
+
+    /* メインビジュアル */
+    .hero {
+      margin: 0 4%;
+      padding: 95px 8%;
+      background: var(--yellow);
+      border-radius: 35px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tag {
+      display: inline-block;
+      background: var(--white);
+      color: var(--orange);
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 2px;
+    }
+
+    h1 {
+      font-size: clamp(45px, 8vw, 85px);
+      line-height: 1.25;
+      margin: 35px 0 15px;
+      font-weight: 900;
+    }
+
+    .hero .catch {
+      font-size: clamp(24px, 4vw, 38px);
+      font-weight: 900;
+      color: #E47755;
+    }
+
+    .hero p {
+      line-height: 2;
+      font-size: 15px;
+      margin-top: 25px;
+    }
+
+    .main-button {
+      display: inline-block;
+      padding: 16px 32px;
+      margin-top: 20px;
+      background: var(--orange);
+      color: white;
+      text-decoration: none;
+      border-radius: 40px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .main-button:hover {
+      transform: translateY(-4px);
+      background: #DF7546;
+    }
+
+    .decoration {
+      position: absolute;
+      right: 8%;
+      top: 25%;
+      font-size: clamp(80px, 15vw, 180px);
+      opacity: 0.8;
+      transform: rotate(12deg);
+    }
+
+    /* 共通セクション */
+    section {
+      padding: 85px 9%;
+      text-align: center;
+    }
+
+    .eyebrow {
+      color: var(--orange);
+      font-size: 12px;
+      font-weight: bold;
+      letter-spacing: 3px;
+    }
+
+    .section-title {
+      font-size: clamp(28px, 5vw, 45px);
+      margin: 15px 0;
+      font-weight: 900;
+    }
+
+    .section-text {
+      color: #7B6B5E;
+      line-height: 2;
+      font-size: 15px;
+    }
+
+    /* サービスカード */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+      margin-top: 45px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 25px;
+      padding: 35px 22px;
+      box-shadow: 0 7px 25px #8D67401A;
+      transition: 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-7px);
+    }
+
+    .card:nth-child(1) {
+      border-top: 7px solid var(--pink);
+    }
+
+    .card:nth-child(2) {
+      border-top: 7px solid var(--orange);
+    }
+
+    .card:nth-child(3) {
+      border-top: 7px solid var(--yellow);
+    }
+
+    .icon {
+      font-size: 42px;
+    }
+
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      font-size: 14px;
+      line-height: 1.8;
+      color: #88796E;
+    }
+
+    /* メッセージ */
+    .message {
+      background: #F9E4DE;
+      border-radius: 35px;
+      padding: 65px 20px;
+    }
+
+    .message .section-title {
+      color: #C96E57;
+    }
+
+    /* フッター */
+    footer {
+      background: var(--brown);
+      color: white;
+      text-align: center;
+      padding: 35px 15px;
+      font-size: 13px;
+      line-height: 2;
+    }
+
+    /* スマートフォン */
+    @media (max-width: 650px) {
+      header {
+        padding: 18px 5%;
+      }
+
+      .logo {
+        font-size: 25px;
+      }
+
+      nav a {
+        margin-left: 9px;
+        font-size: 10px;
+      }
+
+      .hero {
+        margin: 0 3%;
+        padding: 75px 7%;
+      }
+
+      .decoration {
+        right: 3%;
+        top: 12%;
+        opacity: 0.25;
+      }
+
+      section {
+        padding: 60px 7%;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ヘッダー -->
+  <header>
+    <div class="logo">♡ みるる</div>
+
+    <nav>
+      <a href="#about">ABOUT</a>
+      <a href="#service">SERVICE</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- メインビジュアル -->
+    <div class="hero">
+
+      <div class="tag">THEATER PLATFORM</div>
+
+      <div class="decoration">✳</div>
+
+      <h1>
+        観たい！を<br>
+        諦めない！
+      </h1>
+
+      <div class="catch">
+        唯一の広場。
+      </div>
+
+      <p>
+        観たい人も、つくりたい人も。<br>
+        演劇に関わるすべての人の<br>
+        「好き」と「やってみたい」が集まる場所。
+      </p>
+
+      <a href="#service" class="main-button">
+        みるるをのぞいてみる → 
+      </a>
+
+    </div>
+
+    <!-- ABOUT -->
+    <section id="about">
+
+      <div class="eyebrow">01 / ABOUT</div>
+
+      <h2 class="section-title">
+        演劇の世界を、もっと身近に。
+      </h2>
+
+      <p class="section-text">
+        観たい公演が見つからない。<br>
+        一緒に舞台をつくる仲間が見つからない。<br>
+        必要な情報にたどり着けない。<br><br>
+
+        そんな演劇に関わる人たちのために、<br>
+        人・場所・情報をつなぐ広場を目指します。
+      </p>
+
+    </section>
+
+    <!-- SERVICE -->
+    <section id="service">
+
+      <div class="eyebrow">02 / SERVICE</div>
+
+      <h2 class="section-title">
+        みるるで広がる、3つの可能性。
+      </h2>
+
+      <p class="section-text">
+        あなたの「したい！」を見つけよう。
+      </p>
+
+      <div class="cards">
+
+        <div class="card">
+          <div class="icon">🎭</div>
+          <h3>観たい！</h3>
+          <p>
+            公演や劇場の情報を見つけよう。<br>
+            次に観たい舞台に出会えるかも。
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🍊</div>
+          <h3>つくりたい！</h3>
+          <p>
+            舞台づくりの仲間や情報を探そう。<br>
+            新しい挑戦のきっかけに。
+          </p>
+        </div>
+
+        <div class="card">
+          <div class="icon">🌟</div>
+          <h3>つながりたい！</h3>
+          <p>
+            演劇に関わる人たちとつながろう。<br>
+            ひとりではできないことも。
+          </p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- メッセージ -->
+    <section>
+
+      <div class="message">
+
+        <div class="eyebrow">YOUR THEATER LIFE</div>
+
+        <h2 class="section-title">
+          「観たい！」も<br>
+          「やってみたい！」も。
+        </h2>
+
+        <p class="section-text">
+          その気持ちを、諦めないで。<br>
+          みるるは、そんなあなたのための広場です。
+        </p>
+
+      </div>
+
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+
+      <div class="eyebrow">03 / CONTACT</div>
+
+      <h2 class="section-title">
+        一緒に、演劇の未来を。
+      </h2>
+
+      <p class="section-text">
+        みるるについてのお問い合わせ<br>
+        お問い合わせ窓口は準備中です。
+      </p>
+
+    </section>
+
+  </main>
+
+  <footer>
+    ♡ みるる — THEATER PLATFORM ♡<br>
+    観たい！を諦めない！唯一の広場。<br>
+    © 2026 MIRURU
+  </footer>
+
+</body>
+</html>
